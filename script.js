@@ -4,6 +4,12 @@ function locomotiveScrollIntialize() {
   const locoScroll = new LocomotiveScroll({
     el: document.querySelector(".wrapper"),
     smooth: true,
+
+    // for tablet smooth
+    tablet: { smooth: true },
+
+    // for mobile
+    smartphone: { smooth: true },
   });
   locoScroll.on("scroll", ScrollTrigger.update);
 
@@ -21,9 +27,6 @@ function locomotiveScrollIntialize() {
         height: window.innerHeight,
       };
     },
-    pinType: document.querySelector(".wrapper").style.transform
-      ? "transform"
-      : "fixed",
   });
 
   ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
@@ -171,6 +174,7 @@ function sec3() {
 
 sec3();
 
+/*
 function textAnimation() {
   let texts = document.querySelectorAll(".animText");
 
@@ -190,4 +194,5 @@ function textAnimation() {
     });
   });
 }
-// textAnimation();
+textAnimation();
+*/
