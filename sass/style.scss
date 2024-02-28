@@ -430,7 +430,7 @@ p {
   @media (max-width: 15cm) {
     .sec2 {
       .imgbox3D {
-        height: 35vmax;
+        height: 32vmax;
         width: 25vmax;
       }
     }
@@ -500,6 +500,7 @@ p {
       }
 
       .right {
+        height: 40vmax;
         width: 100%;
       }
     }
@@ -516,12 +517,12 @@ p {
         padding-right: 0vmax;
 
         p {
-          width: 95%;
+          width: 92%;
         }
       }
 
       .right {
-        height: 25vmax;
+        height: 26vmax;
       }
     }
   }
@@ -655,13 +656,6 @@ p {
   @media (max-width: 15cm) {
     .sec5 {
       padding: 0 2.5vmax;
-
-      h1 {
-        font-size: 6vmax;
-        border-top: 0.5px solid #fff;
-        border-bottom: 0.5px solid #fff;
-        -webkit-text-stroke: 0.5px #fefefe;
-      }
     }
   }
 
@@ -712,8 +706,12 @@ p {
     .sec6 {
       padding: 15vmax 2.5vmax;
 
+      h2 {
+        padding-right: 10vmax;
+      }
+
       p {
-        width: 91%;
+        width: 88%;
       }
     }
   }

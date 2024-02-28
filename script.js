@@ -144,7 +144,6 @@ function sec2() {
         .querySelector(".imgbox3D")
         .getBoundingClientRect().top;
       let val = Math.floor(imgRect * 0.007);
-      console.log(imgRect);
       let scalingRange = gsap.utils.mapRange(10, -10, 1, 2, val);
       img.style.transform = `translate(-50%, 0) scale(${scalingRange}) rotate3d(1,1,0,${
         imgRect * 0.08

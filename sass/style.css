@@ -384,7 +384,7 @@ p {
 }
 @media (max-width: 15cm) {
   .wrapper .sec2 .imgbox3D {
-    height: 35vmax;
+    height: 32vmax;
     width: 25vmax;
   }
 }
@@ -447,6 +447,7 @@ p {
     width: 100%;
   }
   .wrapper .sec3 .right {
+    height: 40vmax;
     width: 100%;
   }
 }
@@ -461,10 +462,10 @@ p {
     padding-right: 0vmax;
   }
   .wrapper .sec3 .left p {
-    width: 95%;
+    width: 92%;
   }
   .wrapper .sec3 .right {
-    height: 25vmax;
+    height: 26vmax;
   }
 }
 .wrapper .sec4 {
@@ -583,12 +584,6 @@ p {
   .wrapper .sec5 {
     padding: 0 2.5vmax;
   }
-  .wrapper .sec5 h1 {
-    font-size: 6vmax;
-    border-top: 0.5px solid #fff;
-    border-bottom: 0.5px solid #fff;
-    -webkit-text-stroke: 0.5px #fefefe;
-  }
 }
 .wrapper .sec6 {
   height: -moz-fit-content;
@@ -631,8 +626,11 @@ p {
   .wrapper .sec6 {
     padding: 15vmax 2.5vmax;
   }
+  .wrapper .sec6 h2 {
+    padding-right: 10vmax;
+  }
   .wrapper .sec6 p {
-    width: 91%;
+    width: 88%;
   }
 }
 .wrapper .sec7 {
