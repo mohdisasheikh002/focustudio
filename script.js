@@ -4,13 +4,8 @@ function locomotiveScrollIntialize() {
   const locoScroll = new LocomotiveScroll({
     el: document.querySelector(".wrapper"),
     smooth: true,
-
-    // for tablet smooth
-    tablet: { smooth: true },
-
-    // for mobile
-    smartphone: { smooth: true },
   });
+
   locoScroll.on("scroll", ScrollTrigger.update);
 
   ScrollTrigger.scrollerProxy(".wrapper", {
@@ -27,6 +22,9 @@ function locomotiveScrollIntialize() {
         height: window.innerHeight,
       };
     },
+    pinType: document.querySelector(".wrapper").style.transform
+      ? "transform"
+      : "fixed",
   });
 
   ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
