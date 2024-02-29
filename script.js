@@ -67,8 +67,7 @@ function sec1() {
     scrollTrigger: {
       trigger: ".imgbox-holder",
       scroller: ".wrapper",
-      start: "top top",
-      pin: true,
+      start: "top 40%",
       end: "+=60%",
       scrub: 1,
     },
