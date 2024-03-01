@@ -147,7 +147,7 @@ p {
       i {
         padding: 1vmax;
         color: #000;
-        background-color: #fff;
+        background-color: #fefefe;
         opacity: 0.5;
         border-radius: 5vmax;
         transition: 0.25s linear;
@@ -229,7 +229,7 @@ p {
       }
 
       .ri-camera-line {
-        color: #fff;
+        color: #fefefe;
         display: initial;
       }
     }
@@ -517,7 +517,7 @@ p {
         padding-right: 0vmax;
 
         p {
-          width: 92%;
+          width: 91%;
         }
       }
 
@@ -600,8 +600,8 @@ p {
       color: transparent;
       text-transform: uppercase;
       padding: 2vmax 0;
-      border-top: 2px solid #fff;
-      border-bottom: 2px solid #fff;
+      border-top: 2px solid #fefefe;
+      border-bottom: 2px solid #fefefe;
       -webkit-text-stroke: 2px #fefefe;
     }
 
@@ -622,12 +622,12 @@ p {
           letter-spacing: 0;
           text-transform: capitalize;
           padding: 2vmax 0;
-          border-top: 2px solid #fff;
+          border-top: 2px solid #fefefe;
           pointer-events: none;
         }
 
         &:nth-last-child(1) {
-          border-bottom: 2px solid #fff;
+          border-bottom: 2px solid #fefefe;
         }
 
         img {
@@ -650,6 +650,22 @@ p {
   @media (max-width: 30cm) {
     .sec5 {
       padding: 0 3vmax;
+
+      h1 {
+        border-top: 1px solid #fefefe;
+        border-bottom: 1px solid #fefefe;
+      }
+
+      .workbox-holder {
+        .workbox {
+          h2 {
+            border-top: 1px solid #fefefe;
+          }
+          &:nth-last-child(1) {
+            border-bottom: 1px solid #fefefe;
+          }
+        }
+      }
     }
   }
 
@@ -749,7 +765,7 @@ p {
       i {
         padding: 1vmax;
         color: #000;
-        background-color: #fff;
+        background-color: #fefefe;
         opacity: 0.5;
         border-radius: 5vmax;
         transition: 0.25s linear;
