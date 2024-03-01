@@ -1,37 +1,7 @@
-function locomotiveScrollIntialize() {
-  gsap.registerPlugin(ScrollTrigger);
-
-  const locoScroll = new LocomotiveScroll({
-    el: document.querySelector(".wrapper"),
-    smooth: true,
-  });
-
-  locoScroll.on("scroll", ScrollTrigger.update);
-
-  ScrollTrigger.scrollerProxy(".wrapper", {
-    scrollTop(value) {
-      return arguments.length
-        ? locoScroll.scrollTo(value, 0, 0)
-        : locoScroll.scroll.instance.scroll.y;
-    },
-    getBoundingClientRect() {
-      return {
-        top: 0,
-        left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-    },
-    pinType: document.querySelector(".wrapper").style.transform
-      ? "transform"
-      : "fixed",
-  });
-
-  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-
-  ScrollTrigger.refresh();
+function gsapInitialize() {
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 }
-locomotiveScrollIntialize();
+gsapInitialize();
 
 function menu() {
   var on = document.querySelector(".ri-camera-line");
@@ -66,8 +36,8 @@ function sec1() {
   var tl1 = gsap.timeline({
     scrollTrigger: {
       trigger: ".imgbox-holder",
-      scroller: ".wrapper",
-      start: "top 45%",
+      start: "top top",
+      pin: true,
       end: "+=60%",
       scrub: 1,
     },
@@ -129,7 +99,7 @@ function sec2() {
     scrollTrigger: {
       trigger: ".sec2",
       start: "top top",
-      scroller: ".wrapper",
+      pin: true,
       scrub: 2,
       marker: true,
     },
@@ -179,7 +149,7 @@ function textAnimation() {
     gsap.to(t, {
       scrollTrigger: {
         trigger: t,
-        scroller: ".wrapper",
+
         start: "top 100%",
       },
       opacity: 1,
