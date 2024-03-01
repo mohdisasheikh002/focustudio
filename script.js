@@ -1,8 +1,13 @@
 function gsapInitialize() {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-  var smoother = ScrollSmoother.create({
-    wrapper: "#smooth-wrapper",
-    content: "#smooth-content",
+  // var smoother = ScrollSmoother.create({
+  //   wrapper: "#smooth-wrapper",
+  //   content: "#smooth-content",
+  // });
+
+  ScrollSmoother.create({
+    smooth: 1,
+    effects: true,
   });
 }
 gsapInitialize();
@@ -34,7 +39,7 @@ function menu() {
     });
   });
 }
-menu();
+// menu();
 
 function sec1() {
   var tl1 = gsap.timeline({
@@ -89,7 +94,7 @@ function sec1() {
       "abcd"
     );
 }
-sec1();
+// sec1();
 
 function sec2() {
   gsap.to(".marqueebox h1", {
@@ -122,7 +127,7 @@ function sec2() {
   });
 }
 
-sec2();
+// sec2();
 
 function sec3() {
   let workboxes = document.querySelectorAll(".workbox");
@@ -141,7 +146,7 @@ function sec3() {
   });
 }
 
-sec3();
+// sec3();
 
 /*
 function textAnimation() {
