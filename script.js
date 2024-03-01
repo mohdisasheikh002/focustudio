@@ -1,5 +1,9 @@
 function gsapInitialize() {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+  var smoother = ScrollSmoother.create({
+    wrapper: "#smooth-wrapper",
+    content: "#smooth-content",
+  });
 }
 gsapInitialize();
 
