@@ -1,7 +1,7 @@
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 ScrollTrigger.normalizeScroll(true);
 
-ScrollSmoother.create({
+const scroller = ScrollSmoother.create({
   wrapper: ".wrapper",
   content: ".content",
   smooth: 1.5,
@@ -9,31 +9,37 @@ ScrollSmoother.create({
   normalizeScroll: true,
 });
 
+scroller.scrollTrigger.refresh();
+
 function menu() {
+  var mbox = document.querySelector(".menubox");
   var on = document.querySelector(".ri-camera-line");
   var off = document.querySelector(".ri-camera-off-line");
-  var mbox = document.querySelector(".menubox");
+  var toggle = 0;
+  var mbtn = document.querySelector(".menubtn");
 
-  on.addEventListener("click", function () {
-    gsap.to(mbox, {
-      left: "0",
-      duration: 0.5,
-      onUpdate: () => {
-        on.style.display = "none";
-        off.style.display = "flex";
-      },
-    });
-  });
-
-  off.addEventListener("click", function () {
-    gsap.to(mbox, {
-      left: "100%",
-      duration: 0.5,
-      onUpdate: () => {
-        off.style.display = "none";
-        on.style.display = "flex";
-      },
-    });
+  mbtn.addEventListener("click", function () {
+    if (toggle === 0) {
+      gsap.to(mbox, {
+        left: "0",
+        duration: 0.5,
+        onUpdate: () => {
+          on.style.display = "none";
+          off.style.display = "flex";
+        },
+      });
+      toggle = 1;
+    } else {
+      gsap.to(mbox, {
+        left: "100%",
+        duration: 0.5,
+        onUpdate: () => {
+          off.style.display = "none";
+          on.style.display = "flex";
+        },
+      });
+      toggle = 0;
+    }
   });
 }
 menu();

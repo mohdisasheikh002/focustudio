@@ -96,16 +96,16 @@ p {
 }
 .wrapper .menubox {
   position: absolute;
-  bottom: 0;
-  left: 100%;
-  height: calc(100vh - 6vmax);
+  top: 0;
+  left: 0%;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   gap: 23vmax;
   background: #000;
-  z-index: 999;
+  z-index: 9;
   transition: all 0.25s linear;
   padding: 0 2.5vmax;
 }
@@ -169,24 +169,35 @@ p {
   align-items: center;
   justify-content: space-between;
   padding: 0 4vmax;
+  background-color: #000;
+  z-index: 99;
 }
 .wrapper .content .nav a {
-  text-decoration: none;
-}
-.wrapper .content .nav .center {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   font-family: Bandeins;
   font-weight: lighter;
   letter-spacing: 0;
+  text-decoration: none;
+  cursor: pointer;
 }
-.wrapper .content .nav .right {
-  text-align: right;
+.wrapper .content .nav .menubtn {
+  display: flex;
+  align-items: center;
+  gap: 0.4vmax;
+  padding: 0.4vmax 0.8vmax;
+  cursor: pointer;
 }
-.wrapper .content .nav i {
+.wrapper .content .nav .menubtn .ri-camera-line {
+  color: #fefefe;
+  display: initial;
+  pointer-events: none;
+}
+.wrapper .content .nav .menubtn .ri-camera-off-line {
+  color: #fefefe;
   display: none;
+  pointer-events: none;
+}
+.wrapper .content .nav .menubtn a {
+  pointer-events: none;
 }
 @media (max-width: 30cm) {
   .wrapper .content .nav {
@@ -196,25 +207,13 @@ p {
 }
 @media (max-width: 15cm) {
   .wrapper .content .nav {
-    height: 6vmax;
-    justify-content: flex-end;
     padding: 0 2.5vmax;
   }
-  .wrapper .content .nav .left {
-    display: none;
-  }
-  .wrapper .content .nav .center {
+  .wrapper .content .nav .logo {
     position: absolute;
     top: 50%;
     left: 2.5vmax;
     transform: translate(0%, -50%);
-  }
-  .wrapper .content .nav .right {
-    display: none;
-  }
-  .wrapper .content .nav .ri-camera-line {
-    color: #fefefe;
-    display: initial;
   }
 }
 .wrapper .content .sec1 {
@@ -229,14 +228,13 @@ p {
   letter-spacing: 0;
   text-transform: capitalize;
   text-align: center;
-  margin-top: 1vmax;
-  padding: 0 22vmax;
+  padding: 0 20vmax;
 }
 .wrapper .content .sec1 .imgbox-holder {
   position: relative;
   height: 100vh;
   width: 100%;
-  margin-top: 4vmax;
+  margin-top: 3vmax;
 }
 .wrapper .content .sec1 .imgbox-holder .large-imgbox {
   position: absolute;

@@ -104,16 +104,16 @@ p {
 
   .menubox {
     position: absolute;
-    bottom: 0;
-    left: 100%;
-    height: calc(100vh - 6vmax);
+    top: 0;
+    left: 0%;
+    height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     gap: 23vmax;
     background: #000;
-    z-index: 999;
+    z-index: 9;
     transition: all 0.25s linear;
     padding: 0 2.5vmax;
 
@@ -179,27 +179,39 @@ p {
       align-items: center;
       justify-content: space-between;
       padding: 0 4vmax;
+      background-color: #000;
+      z-index: 99;
 
       a {
-        text-decoration: none;
-      }
-
-      .center {
-        position: absolute;
-        top: 55%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         font-family: Bandeins;
         font-weight: lighter;
         letter-spacing: 0;
+        text-decoration: none;
+        cursor: pointer;
       }
 
-      .right {
-        text-align: right;
-      }
+      .menubtn {
+        display: flex;
+        align-items: center;
+        gap: 0.4vmax;
+        padding: 0.4vmax 0.8vmax;
+        cursor: pointer;
 
-      i {
-        display: none;
+        .ri-camera-line {
+          color: #fefefe;
+          display: initial;
+          pointer-events: none;
+        }
+
+        .ri-camera-off-line {
+          color: #fefefe;
+          display: none;
+          pointer-events: none;
+        }
+
+        a {
+          pointer-events: none;
+        }
       }
     }
 
@@ -212,28 +224,13 @@ p {
 
     @media (max-width: 15cm) {
       .nav {
-        height: 6vmax;
-        justify-content: flex-end;
         padding: 0 2.5vmax;
 
-        .left {
-          display: none;
-        }
-
-        .center {
+        .logo {
           position: absolute;
           top: 50%;
           left: 2.5vmax;
           transform: translate(0%, -50%);
-        }
-
-        .right {
-          display: none;
-        }
-
-        .ri-camera-line {
-          color: #fefefe;
-          display: initial;
         }
       }
     }
@@ -249,15 +246,14 @@ p {
         letter-spacing: 0;
         text-transform: capitalize;
         text-align: center;
-        margin-top: 1vmax;
-        padding: 0 22vmax;
+        padding: 0 20vmax;
       }
 
       .imgbox-holder {
         position: relative;
         height: 100vh;
         width: 100%;
-        margin-top: 4vmax;
+        margin-top: 3vmax;
 
         .large-imgbox {
           position: absolute;
