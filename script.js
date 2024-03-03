@@ -1,16 +1,13 @@
-function gsapInitialize() {
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-  // var smoother = ScrollSmoother.create({
-  //   wrapper: "#smooth-wrapper",
-  //   content: "#smooth-content",
-  // });
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+ScrollTrigger.normalizeScroll(true);
 
-  ScrollSmoother.create({
-    smooth: 1,
-    effects: true,
-  });
-}
-gsapInitialize();
+ScrollSmoother.create({
+  wrapper: ".wrapper",
+  content: ".content",
+  smooth: 1.5,
+  effects: true,
+  normalizeScroll: true,
+});
 
 function menu() {
   var on = document.querySelector(".ri-camera-line");
@@ -39,7 +36,7 @@ function menu() {
     });
   });
 }
-// menu();
+menu();
 
 function sec1() {
   var tl1 = gsap.timeline({
@@ -94,7 +91,7 @@ function sec1() {
       "abcd"
     );
 }
-// sec1();
+sec1();
 
 function sec2() {
   gsap.to(".marqueebox h1", {
@@ -127,7 +124,7 @@ function sec2() {
   });
 }
 
-// sec2();
+sec2();
 
 function sec3() {
   let workboxes = document.querySelectorAll(".workbox");
@@ -146,7 +143,7 @@ function sec3() {
   });
 }
 
-// sec3();
+sec3();
 
 /*
 function textAnimation() {

@@ -31,6 +31,7 @@ body {
   width: 100%;
   background-color: #000;
   overflow-x: hidden;
+  overscroll-behavior: none;
   cursor: default;
 }
 
@@ -90,7 +91,10 @@ p {
     line-height: 2.6vmax;
   }
 }
-.menubox {
+.wrapper {
+  position: relative;
+}
+.wrapper .menubox {
   position: absolute;
   bottom: 0;
   left: 100%;
@@ -105,19 +109,19 @@ p {
   transition: all 0.25s linear;
   padding: 0 2.5vmax;
 }
-.menubox .elem1 {
+.wrapper .menubox .elem1 {
   height: -moz-fit-content;
   height: fit-content;
   width: -moz-fit-content;
   width: fit-content;
   text-align: center;
 }
-.menubox .elem1 a {
+.wrapper .menubox .elem1 a {
   line-height: 9.5vmax;
   text-decoration: none;
   transition: all 0.25s linear;
 }
-.menubox .elem2 {
+.wrapper .menubox .elem2 {
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
@@ -126,11 +130,11 @@ p {
   justify-content: space-between;
   padding: 2.5vmax 0;
 }
-.menubox .elem2 h4 {
+.wrapper .menubox .elem2 h4 {
   font-family: bandeins;
   font-weight: lighter;
 }
-.menubox .elem2 .smlinkbox {
+.wrapper .menubox .elem2 .smlinkbox {
   height: -moz-fit-content;
   height: fit-content;
   width: -moz-fit-content;
@@ -138,7 +142,7 @@ p {
   display: flex;
   gap: 1.25vmax;
 }
-.menubox .elem2 .smlinkbox i {
+.wrapper .menubox .elem2 .smlinkbox i {
   padding: 1vmax;
   color: #000;
   background-color: #fefefe;
@@ -147,19 +151,17 @@ p {
   transition: 0.25s linear;
   cursor: pointer;
 }
-.menubox .elem2 .smlinkbox i:hover {
+.wrapper .menubox .elem2 .smlinkbox i:hover {
   opacity: 1;
   transition: 0.25s linear;
 }
-
-.wrapper {
+.wrapper .content {
   position: relative;
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
-  background-color: #000;
 }
-.wrapper .nav {
+.wrapper .content .nav {
   position: relative;
   height: 8vmax;
   width: 100%;
@@ -168,10 +170,10 @@ p {
   justify-content: space-between;
   padding: 0 4vmax;
 }
-.wrapper .nav a {
+.wrapper .content .nav a {
   text-decoration: none;
 }
-.wrapper .nav .center {
+.wrapper .content .nav .center {
   position: absolute;
   top: 55%;
   left: 50%;
@@ -180,47 +182,47 @@ p {
   font-weight: lighter;
   letter-spacing: 0;
 }
-.wrapper .nav .right {
+.wrapper .content .nav .right {
   text-align: right;
 }
-.wrapper .nav i {
+.wrapper .content .nav i {
   display: none;
 }
 @media (max-width: 30cm) {
-  .wrapper .nav {
+  .wrapper .content .nav {
     height: 6vmax;
     padding: 0 3vmax;
   }
 }
 @media (max-width: 15cm) {
-  .wrapper .nav {
+  .wrapper .content .nav {
     height: 6vmax;
     justify-content: flex-end;
     padding: 0 2.5vmax;
   }
-  .wrapper .nav .left {
+  .wrapper .content .nav .left {
     display: none;
   }
-  .wrapper .nav .center {
+  .wrapper .content .nav .center {
     position: absolute;
     top: 50%;
     left: 2.5vmax;
     transform: translate(0%, -50%);
   }
-  .wrapper .nav .right {
+  .wrapper .content .nav .right {
     display: none;
   }
-  .wrapper .nav .ri-camera-line {
+  .wrapper .content .nav .ri-camera-line {
     color: #fefefe;
     display: initial;
   }
 }
-.wrapper .sec1 {
+.wrapper .content .sec1 {
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
 }
-.wrapper .sec1 h2 {
+.wrapper .content .sec1 h2 {
   font-family: bandeins;
   font-weight: lighter;
   line-height: 3.7vmax;
@@ -230,13 +232,13 @@ p {
   margin-top: 1vmax;
   padding: 0 22vmax;
 }
-.wrapper .sec1 .imgbox-holder {
+.wrapper .content .sec1 .imgbox-holder {
   position: relative;
   height: 100vh;
   width: 100%;
   margin-top: 4vmax;
 }
-.wrapper .sec1 .imgbox-holder .large-imgbox {
+.wrapper .content .sec1 .imgbox-holder .large-imgbox {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -246,7 +248,7 @@ p {
   overflow: hidden;
   z-index: 99;
 }
-.wrapper .sec1 .imgbox-holder .large-imgbox img {
+.wrapper .content .sec1 .imgbox-holder .large-imgbox img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
@@ -254,7 +256,7 @@ p {
   -o-object-position: center;
      object-position: center;
 }
-.wrapper .sec1 .imgbox-holder .medium-imgbox {
+.wrapper .content .sec1 .imgbox-holder .medium-imgbox {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
@@ -263,13 +265,13 @@ p {
   overflow: hidden;
   z-index: 88;
 }
-.wrapper .sec1 .imgbox-holder .m1 {
+.wrapper .content .sec1 .imgbox-holder .m1 {
   left: 13%;
 }
-.wrapper .sec1 .imgbox-holder .m2 {
+.wrapper .content .sec1 .imgbox-holder .m2 {
   right: 13%;
 }
-.wrapper .sec1 .imgbox-holder .small-imgbox {
+.wrapper .content .sec1 .imgbox-holder .small-imgbox {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
@@ -277,13 +279,13 @@ p {
   width: 15%;
   overflow: hidden;
 }
-.wrapper .sec1 .imgbox-holder .s1 {
+.wrapper .content .sec1 .imgbox-holder .s1 {
   left: 0;
 }
-.wrapper .sec1 .imgbox-holder .s2 {
+.wrapper .content .sec1 .imgbox-holder .s2 {
   right: 0;
 }
-.wrapper .sec1 .imgbox-holder img {
+.wrapper .content .sec1 .imgbox-holder img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
@@ -292,66 +294,66 @@ p {
      object-position: center;
 }
 @media (max-width: 30cm) {
-  .wrapper .sec1 {
+  .wrapper .content .sec1 {
     height: calc(100vh - 3vmax);
     padding-top: 13vmax;
   }
-  .wrapper .sec1 h2 {
+  .wrapper .content .sec1 h2 {
     line-height: 4vmax;
     margin-top: 0;
     padding: 0 7vmax;
   }
-  .wrapper .sec1 .imgbox-holder {
+  .wrapper .content .sec1 .imgbox-holder {
     height: 40vh;
   }
 }
 @media (max-width: 15cm) {
-  .wrapper .sec1 {
+  .wrapper .content .sec1 {
     padding-top: 13vmax;
   }
-  .wrapper .sec1 h2 {
+  .wrapper .content .sec1 h2 {
     padding: 0 2.5vmax;
   }
-  .wrapper .sec1 .imgbox-holder {
+  .wrapper .content .sec1 .imgbox-holder {
     height: 30vh;
   }
 }
-.wrapper .sec2 {
+.wrapper .content .sec2 {
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.wrapper .sec2 .marqueebox {
+.wrapper .content .sec2 .marqueebox {
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
 }
-.wrapper .sec2 .marqueebox .text-holder {
+.wrapper .content .sec2 .marqueebox .text-holder {
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
   display: flex;
   flex: 0 0 auto;
 }
-.wrapper .sec2 .marqueebox .text-holder h1 {
+.wrapper .content .sec2 .marqueebox .text-holder h1 {
   height: 9vmax;
   display: flex;
   align-items: center;
 }
-.wrapper .sec2 .marqueebox::-webkit-scrollbar {
+.wrapper .content .sec2 .marqueebox::-webkit-scrollbar {
   display: none;
 }
-.wrapper .sec2 .mrq1 h1 {
+.wrapper .content .sec2 .mrq1 h1 {
   text-transform: uppercase;
   color: #fefefe;
   white-space: nowrap;
   min-width: 163vmax;
 }
-.wrapper .sec2 .mrq2 h1 {
+.wrapper .content .sec2 .mrq2 h1 {
   font-family: AeonikBold;
   text-transform: uppercase;
   color: transparent;
@@ -359,7 +361,7 @@ p {
   white-space: nowrap;
   min-width: 128vmax;
 }
-.wrapper .sec2 .imgbox3D {
+.wrapper .content .sec2 .imgbox3D {
   position: absolute;
   top: 120%;
   left: 50%;
@@ -369,7 +371,7 @@ p {
   transition: 0.25s linear;
   will-change: transform;
 }
-.wrapper .sec2 .imgbox3D img {
+.wrapper .content .sec2 .imgbox3D img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
@@ -378,17 +380,17 @@ p {
      object-position: center -2vmax;
 }
 @media (max-width: 30cm) {
-  .wrapper .sec2 .imgbox3D {
+  .wrapper .content .sec2 .imgbox3D {
     height: 40vmax;
   }
 }
 @media (max-width: 15cm) {
-  .wrapper .sec2 .imgbox3D {
+  .wrapper .content .sec2 .imgbox3D {
     height: 32vmax;
     width: 25vmax;
   }
 }
-.wrapper .sec3 {
+.wrapper .content .sec3 {
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
@@ -396,31 +398,31 @@ p {
   justify-content: space-between;
   padding: 0 4vmax;
 }
-.wrapper .sec3 .left {
+.wrapper .content .sec3 .left {
   height: 35vmax;
   width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
-.wrapper .sec3 .left h2 {
+.wrapper .content .sec3 .left h2 {
   font-family: bandeins;
   font-weight: lighter;
   line-height: 3.7vmax;
   letter-spacing: 0;
   text-transform: capitalize;
 }
-.wrapper .sec3 .left p {
+.wrapper .content .sec3 .left p {
   font-family: AeonikLight;
   width: 85%;
   opacity: 0.5;
 }
-.wrapper .sec3 .right {
+.wrapper .content .sec3 .right {
   height: 35vmax;
   width: 60%;
   cursor: pointer;
 }
-.wrapper .sec3 .right img {
+.wrapper .content .sec3 .right img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
@@ -429,46 +431,46 @@ p {
      object-position: center;
 }
 @media (max-width: 30cm) {
-  .wrapper .sec3 {
+  .wrapper .content .sec3 {
     flex-direction: column;
     gap: 3vmax;
     padding: 0 3vmax;
   }
-  .wrapper .sec3 .left {
+  .wrapper .content .sec3 .left {
     height: -moz-fit-content;
     height: fit-content;
     width: 100%;
     padding-right: 24vmax;
   }
-  .wrapper .sec3 .left h2 {
+  .wrapper .content .sec3 .left h2 {
     line-height: 4vmax;
   }
-  .wrapper .sec3 .left p {
+  .wrapper .content .sec3 .left p {
     width: 100%;
   }
-  .wrapper .sec3 .right {
+  .wrapper .content .sec3 .right {
     height: 40vmax;
     width: 100%;
   }
 }
 @media (max-width: 15cm) {
-  .wrapper .sec3 {
+  .wrapper .content .sec3 {
     flex-direction: column;
     gap: 3vmax;
     padding: 0 2.5vmax;
   }
-  .wrapper .sec3 .left {
+  .wrapper .content .sec3 .left {
     width: 100%;
     padding-right: 0vmax;
   }
-  .wrapper .sec3 .left p {
+  .wrapper .content .sec3 .left p {
     width: 91%;
   }
-  .wrapper .sec3 .right {
+  .wrapper .content .sec3 .right {
     height: 26vmax;
   }
 }
-.wrapper .sec4 {
+.wrapper .content .sec4 {
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
@@ -476,29 +478,29 @@ p {
   align-items: center;
   padding: 12vmax 4vmax;
 }
-.wrapper .sec4 h1 {
+.wrapper .content .sec4 h1 {
   line-height: 8.5vmax;
   text-transform: uppercase;
 }
-.wrapper .sec4 h1 span {
+.wrapper .content .sec4 h1 span {
   font-family: AeonikBold;
   color: transparent;
   -webkit-text-stroke: 2px #fefefe;
 }
-.wrapper .sec4 h1 .imgbox-holder {
+.wrapper .content .sec4 h1 .imgbox-holder {
   position: relative;
   height: 6.4vmax;
   width: 12vmax;
   display: inline-block;
 }
-.wrapper .sec4 h1 .imgbox-holder .imgbox {
+.wrapper .content .sec4 h1 .imgbox-holder .imgbox {
   position: absolute;
   top: -21%;
   height: 100%;
   width: 100%;
   cursor: pointer;
 }
-.wrapper .sec4 h1 .imgbox-holder .imgbox img {
+.wrapper .content .sec4 h1 .imgbox-holder .imgbox img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
@@ -507,28 +509,28 @@ p {
      object-position: center;
 }
 @media (max-width: 30cm) {
-  .wrapper .sec4 {
+  .wrapper .content .sec4 {
     padding: 15vmax 3vmax;
   }
-  .wrapper .sec4 h1 {
+  .wrapper .content .sec4 h1 {
     line-height: 9vmax;
   }
 }
 @media (max-width: 15cm) {
-  .wrapper .sec4 {
+  .wrapper .content .sec4 {
     padding: 15vmax 2.5vmax;
   }
-  .wrapper .sec4 h1 .imgbox-holder {
+  .wrapper .content .sec4 h1 .imgbox-holder {
     display: none;
   }
 }
-.wrapper .sec5 {
+.wrapper .content .sec5 {
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
   padding: 0 4vmax;
 }
-.wrapper .sec5 h1 {
+.wrapper .content .sec5 h1 {
   font-family: AeonikBold;
   color: transparent;
   text-transform: uppercase;
@@ -537,20 +539,20 @@ p {
   border-bottom: 2px solid #fefefe;
   -webkit-text-stroke: 2px #fefefe;
 }
-.wrapper .sec5 .workbox-holder {
+.wrapper .content .sec5 .workbox-holder {
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
   margin-top: 2vmax;
 }
-.wrapper .sec5 .workbox-holder .workbox {
+.wrapper .content .sec5 .workbox-holder .workbox {
   position: relative;
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
   cursor: pointer;
 }
-.wrapper .sec5 .workbox-holder .workbox h2 {
+.wrapper .content .sec5 .workbox-holder .workbox h2 {
   font-weight: lighter;
   font-family: bandeins;
   letter-spacing: 0;
@@ -559,10 +561,10 @@ p {
   border-top: 2px solid #fefefe;
   pointer-events: none;
 }
-.wrapper .sec5 .workbox-holder .workbox:nth-last-child(1) {
+.wrapper .content .sec5 .workbox-holder .workbox:nth-last-child(1) {
   border-bottom: 2px solid #fefefe;
 }
-.wrapper .sec5 .workbox-holder .workbox img {
+.wrapper .content .sec5 .workbox-holder .workbox img {
   position: absolute;
   top: -10%;
   left: 50%;
@@ -576,26 +578,26 @@ p {
   transition: all cubic-bezier(0.19, 1, 0.22, 1) 2s;
 }
 @media (max-width: 30cm) {
-  .wrapper .sec5 {
+  .wrapper .content .sec5 {
     padding: 0 3vmax;
   }
-  .wrapper .sec5 h1 {
+  .wrapper .content .sec5 h1 {
     border-top: 1px solid #fefefe;
     border-bottom: 1px solid #fefefe;
   }
-  .wrapper .sec5 .workbox-holder .workbox h2 {
+  .wrapper .content .sec5 .workbox-holder .workbox h2 {
     border-top: 1px solid #fefefe;
   }
-  .wrapper .sec5 .workbox-holder .workbox:nth-last-child(1) {
+  .wrapper .content .sec5 .workbox-holder .workbox:nth-last-child(1) {
     border-bottom: 1px solid #fefefe;
   }
 }
 @media (max-width: 15cm) {
-  .wrapper .sec5 {
+  .wrapper .content .sec5 {
     padding: 0 2.5vmax;
   }
 }
-.wrapper .sec6 {
+.wrapper .content .sec6 {
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
@@ -604,67 +606,67 @@ p {
   justify-content: center;
   padding: 12vmax 4vmax;
 }
-.wrapper .sec6 h1 {
+.wrapper .content .sec6 h1 {
   line-height: 8.5vmax;
   text-transform: uppercase;
 }
-.wrapper .sec6 h2 {
+.wrapper .content .sec6 h2 {
   font-weight: lighter;
   font-family: bandeins;
   letter-spacing: 0;
   text-transform: capitalize;
   margin-top: 2vmax;
 }
-.wrapper .sec6 p {
+.wrapper .content .sec6 p {
   font-family: AeonikLight;
   width: 46%;
   margin-top: 2vmax;
   opacity: 0.5;
 }
 @media (max-width: 30cm) {
-  .wrapper .sec6 {
+  .wrapper .content .sec6 {
     padding: 15vmax 3vmax;
   }
-  .wrapper .sec6 h1 {
+  .wrapper .content .sec6 h1 {
     line-height: 9vmax;
   }
-  .wrapper .sec6 p {
+  .wrapper .content .sec6 p {
     width: 80%;
   }
 }
 @media (max-width: 15cm) {
-  .wrapper .sec6 {
+  .wrapper .content .sec6 {
     padding: 15vmax 2.5vmax;
   }
-  .wrapper .sec6 h2 {
+  .wrapper .content .sec6 h2 {
     padding-right: 10vmax;
   }
-  .wrapper .sec6 p {
+  .wrapper .content .sec6 p {
     width: 88%;
   }
 }
-.wrapper .sec7 {
+.wrapper .content .sec7 {
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
   padding: 0 4vmax;
   padding-bottom: 4vmax;
 }
-.wrapper .sec7 h1 {
+.wrapper .content .sec7 h1 {
   line-height: 8.5vmax;
   text-transform: uppercase;
 }
-.wrapper .sec7 .ptheading {
+.wrapper .content .sec7 .ptheading {
   display: none;
 }
-.wrapper .sec7 h2 {
+.wrapper .content .sec7 h2 {
   font-weight: lighter;
   font-family: bandeins;
   letter-spacing: 0;
   text-transform: capitalize;
   margin-top: 2vmax;
 }
-.wrapper .sec7 .smlinkbox {
+.wrapper .content .sec7 .smlinkbox {
   height: -moz-fit-content;
   height: fit-content;
   width: -moz-fit-content;
@@ -673,7 +675,7 @@ p {
   gap: 2vmax;
   margin-top: 2vmax;
 }
-.wrapper .sec7 .smlinkbox i {
+.wrapper .content .sec7 .smlinkbox i {
   padding: 1vmax;
   color: #000;
   background-color: #fefefe;
@@ -682,25 +684,25 @@ p {
   transition: 0.25s linear;
   cursor: pointer;
 }
-.wrapper .sec7 .smlinkbox i:hover {
+.wrapper .content .sec7 .smlinkbox i:hover {
   opacity: 1;
   transition: 0.25s linear;
 }
 @media (max-width: 30cm) {
-  .wrapper .sec7 {
+  .wrapper .content .sec7 {
     padding: 0 3vmax;
     padding-bottom: 3vmax;
   }
 }
 @media (max-width: 15cm) {
-  .wrapper .sec7 {
+  .wrapper .content .sec7 {
     padding: 0 2.5vmax;
     padding-bottom: 2.5vmax;
   }
-  .wrapper .sec7 .lsheading {
+  .wrapper .content .sec7 .lsheading {
     display: none;
   }
-  .wrapper .sec7 .ptheading {
+  .wrapper .content .sec7 .ptheading {
     display: initial;
   }
 }/*# sourceMappingURL=style.css.map */
