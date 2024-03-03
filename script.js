@@ -1,12 +1,10 @@
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-ScrollTrigger.normalizeScroll(true);
 
 ScrollSmoother.create({
   wrapper: ".wrapper",
   content: ".content",
   smooth: 1.5,
   effects: true,
-  normalizeScroll: true,
 });
 
 function menu() {
