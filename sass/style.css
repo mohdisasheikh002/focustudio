@@ -363,7 +363,7 @@ p {
 }
 .wrapper .content .sec2 .imgbox3D {
   position: absolute;
-  top: 100%;
+  top: 120%;
   left: 50%;
   transform: translate(-50%, 0);
   height: 35vmax;
@@ -464,7 +464,7 @@ p {
     padding-right: 0vmax;
   }
   .wrapper .content .sec3 .left p {
-    width: 90%;
+    width: 91%;
   }
   .wrapper .content .sec3 .right {
     height: 26vmax;
