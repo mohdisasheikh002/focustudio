@@ -174,26 +174,3 @@ function sec3() {
 }
 
 sec3();
-
-/*
-function textAnimation() {
-  let texts = document.querySelectorAll(".animText");
-
-  gsap.set(".animText", { opacity: 0 });
-
-  texts.forEach((t) => {
-    gsap.to(t, {
-      scrollTrigger: {
-        trigger: t,
-
-        start: "top 100%",
-      },
-      opacity: 1,
-      onStart: function () {
-        $(t).textillate({ in: { effect: "fadeInUp" } });
-      },
-    });
-  });
-}
-textAnimation();
-*/
