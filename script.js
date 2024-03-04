@@ -9,7 +9,7 @@ const scroller = ScrollSmoother.create({
   normalizeScroll: true,
 });
 
-scroller.scrollTrigger.refresh();
+ScrollTrigger.refresh();
 
 function menu() {
   var mbox = document.querySelector(".menubox");
@@ -19,26 +19,50 @@ function menu() {
   var mbtn = document.querySelector(".menubtn");
 
   mbtn.addEventListener("click", function () {
-    if (toggle === 0) {
-      gsap.to(mbox, {
-        left: "0",
-        duration: 0.5,
-        onUpdate: () => {
-          on.style.display = "none";
-          off.style.display = "flex";
-        },
-      });
-      toggle = 1;
+    if (window.screen.width > 1020) {
+      if (toggle === 0) {
+        gsap.to(mbox, {
+          left: "0",
+          duration: 0.5,
+          onUpdate: () => {
+            on.style.display = "none";
+            off.style.display = "flex";
+          },
+        });
+        toggle = 1;
+      } else {
+        gsap.to(mbox, {
+          left: "-35%",
+          duration: 0.5,
+          onUpdate: () => {
+            off.style.display = "none";
+            on.style.display = "flex";
+          },
+        });
+        toggle = 0;
+      }
     } else {
-      gsap.to(mbox, {
-        left: "100%",
-        duration: 0.5,
-        onUpdate: () => {
-          off.style.display = "none";
-          on.style.display = "flex";
-        },
-      });
-      toggle = 0;
+      if (toggle === 0) {
+        gsap.to(mbox, {
+          left: "0",
+          duration: 0.5,
+          onUpdate: () => {
+            on.style.display = "none";
+            off.style.display = "flex";
+          },
+        });
+        toggle = 1;
+      } else {
+        gsap.to(mbox, {
+          left: "-100%",
+          duration: 0.5,
+          onUpdate: () => {
+            off.style.display = "none";
+            on.style.display = "flex";
+          },
+        });
+        toggle = 0;
+      }
     }
   });
 }
