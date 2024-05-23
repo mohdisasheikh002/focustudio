@@ -1,23 +1,4 @@
-@font-face {
-  src: url("../fonts/bandeins.otf");
-  font-family: "bandeins";
-}
-@font-face {
-  src: url("../fonts/Aeonik-Light.otf");
-  font-family: "AeonikLight";
-}
-@font-face {
-  src: url("../fonts/Aeonik-Regular.otf");
-  font-family: "AeonikRegular";
-}
-@font-face {
-  src: url("../fonts/Aeonik-Medium.otf");
-  font-family: "AeonikMedium";
-}
-@font-face {
-  src: url("../fonts/Aeonik-Bold.otf");
-  font-family: "AeonikBold";
-}
+@import "../sass/fonts.css";
 * {
   margin: 0;
   padding: 0;
@@ -34,62 +15,6 @@ body {
   cursor: default;
 }
 
-.fs1 {
-  font-size: 9vmax;
-  font-family: AeonikRegular;
-  letter-spacing: 0.03vmax;
-  color: #fefefe;
-}
-
-.fs2 {
-  font-size: 3.5vmax;
-  font-family: AeonikRegular;
-  letter-spacing: 0.03vmax;
-  color: #fefefe;
-}
-
-.fs3 {
-  font-size: 3vmax;
-  font-family: AeonikRegular;
-  letter-spacing: 0.03vmax;
-  color: #fefefe;
-}
-
-.fs4 {
-  font-size: 1.5vmax;
-  font-family: AeonikRegular;
-  letter-spacing: 0.03vmax;
-  color: #fefefe;
-}
-
-.fs5 {
-  font-size: 1vmax;
-  line-height: 1.3vmax;
-  font-family: AeonikRegular;
-  letter-spacing: 0.03vmax;
-  color: #fefefe;
-}
-
-p {
-  font-size: 1.3vmax;
-  line-height: 2.3vmax;
-  letter-spacing: 0.03vmax;
-  color: #fefefe;
-}
-
-@media (max-width: 30cm) {
-  .fs4 {
-    font-size: 2vmax;
-  }
-  .fs5 {
-    font-size: 1.5vmax;
-    line-height: 1.8vmax;
-  }
-  p {
-    font-size: 1.6vmax;
-    line-height: 2.6vmax;
-  }
-}
 .nav {
   position: fixed;
   top: 0;
@@ -177,11 +102,6 @@ p {
   align-items: center;
   justify-content: space-between;
   padding: 2.5vmax 0;
-}
-.menubox .elem2 h4 {
-  font-family: bandeins;
-  font-weight: lighter;
-  display: none;
 }
 .menubox .elem2 .smlinkbox {
   height: -moz-fit-content;
