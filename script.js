@@ -19,50 +19,42 @@ function menu() {
   var mbtn = document.querySelector(".menubtn");
 
   mbtn.addEventListener("click", function () {
-    if (window.screen.width > 1020) {
-      if (toggle === 0) {
-        gsap.to(mbox, {
-          left: "0",
-          duration: 0.5,
-          onUpdate: () => {
-            on.style.display = "none";
-            off.style.display = "flex";
-          },
-        });
-        toggle = 1;
-      } else {
-        gsap.to(mbox, {
-          left: "-35%",
-          duration: 0.5,
-          onUpdate: () => {
-            off.style.display = "none";
-            on.style.display = "flex";
-          },
-        });
-        toggle = 0;
-      }
+    if (toggle === 0) {
+      gsap.to(mbox, {
+        display: "flex",
+        height: "100vh",
+        onUpdate: () => {
+          on.style.display = "none";
+          off.style.display = "flex";
+        },
+      });
+      gsap.to(".linkbox a", {
+        delay: 0.3,
+        opacity: 1,
+        marginRight: "0vmax",
+        stagger: 0.1,
+      });
+      toggle = 1;
     } else {
-      if (toggle === 0) {
-        gsap.to(mbox, {
-          left: "0",
-          duration: 0.5,
-          onUpdate: () => {
-            on.style.display = "none";
-            off.style.display = "flex";
-          },
-        });
-        toggle = 1;
-      } else {
-        gsap.to(mbox, {
-          left: "-100%",
-          duration: 0.5,
-          onUpdate: () => {
-            off.style.display = "none";
-            on.style.display = "flex";
-          },
-        });
-        toggle = 0;
-      }
+      gsap.to(mbox, {
+        delay: 0.7,
+        height: "0vh",
+        bottom: "100%",
+        duration: 0.5,
+        onUpdate: () => {
+          off.style.display = "none";
+          on.style.display = "flex";
+        },
+        onComplete: function () {
+          mbox.style.bottom = "0%";
+        },
+      });
+      gsap.to(".linkbox a", {
+        opacity: 0,
+        marginRight: "10vmax",
+        stagger: 0.1,
+      });
+      toggle = 0;
     }
   });
 }

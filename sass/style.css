@@ -40,6 +40,7 @@ body {
   gap: 0.1vmax;
   padding: 0.4vmax 0.8vmax;
   cursor: pointer;
+  z-index: 88;
 }
 .nav .menubtn .ri-camera-line {
   color: #fefefe;
@@ -68,81 +69,39 @@ body {
 }
 .menubox {
   position: fixed;
-  top: 0;
-  left: -35%;
-  height: 100vh;
-  width: 35%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 1.5vmax;
+  bottom: 0%;
+  left: 0%;
+  height: 0vh;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
   background: #000;
-  transition: all 0.25s linear;
-  padding: 0 2.5vmax;
+  padding: 0 4vmax;
   z-index: 9;
+  transition: all cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.menubox .elem1 {
+.menubox .linkbox {
   height: -moz-fit-content;
   height: fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  text-align: center;
 }
-.menubox .elem1 a {
+.menubox .linkbox a {
   font-size: 7vmax;
   line-height: 7.5vmax;
   text-decoration: none;
   display: block;
-  transition: all 0.25s linear;
-}
-.menubox .elem2 {
-  height: -moz-fit-content;
-  height: fit-content;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2.5vmax 0;
-}
-.menubox .elem2 .smlinkbox {
-  height: -moz-fit-content;
-  height: fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  display: flex;
-  gap: 1.25vmax;
-}
-.menubox .elem2 .smlinkbox i {
-  padding: 1vmax;
-  color: #000;
-  background-color: #fefefe;
-  opacity: 0.5;
-  border-radius: 5vmax;
-  transition: 0.25s linear;
-  cursor: pointer;
-}
-.menubox .elem2 .smlinkbox i:hover {
-  opacity: 1;
-  transition: 0.25s linear;
+  margin-right: 10vmax;
+  opacity: 0;
 }
 
 @media (max-width: 30cm) {
-  .menubox {
-    left: -100%;
-    width: 100%;
-    align-items: center;
-    gap: 23vmax;
-  }
-  .menubox .elem1 a {
+  .menubox .linkbox a {
     font-size: 9vmax;
     line-height: 9.5vmax;
     text-align: center;
-  }
-  .menubox .elem2 h4 {
-    display: initial;
-  }
-  .menubox .elem2 .smlinkbox i {
-    font-size: 3.5vmax;
-    padding: 1.5vmax;
   }
 }
 .wrapper {
@@ -512,7 +471,7 @@ body {
   pointer-events: none;
   opacity: 0;
   will-change: transform;
-  transition: all cubic-bezier(0.19, 1, 0.22, 1) 2s;
+  transition: 0.25s linear;
 }
 @media (max-width: 30cm) {
   .wrapper .content .sec5 {
@@ -527,6 +486,9 @@ body {
   }
   .wrapper .content .sec5 .workbox-holder .workbox:nth-last-child(1) {
     border-bottom: 1px solid #fefefe;
+  }
+  .wrapper .content .sec5 .workbox-holder .workbox img {
+    left: 20%;
   }
 }
 @media (max-width: 15cm) {
